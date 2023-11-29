@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { GoBackBtn, ProjectBtn } from "../../components";
+import { GoBackBtn, ProjectBtn, Loader } from "../../components";
 
 
 export const Projects = () => {
@@ -13,7 +13,7 @@ export const Projects = () => {
             return response.json();
         })
         .then(function(myJson){
-            setProjects(myJson);
+            setProjects(myJson)
             setLoading(false)
         })
     };
@@ -27,12 +27,24 @@ export const Projects = () => {
     }
 
     useEffect(()=>{
-        getProjectData()
+        try {
+            setLoading(true);
+            getProjectData()
+            .finally(() => {
+                setLoading(false)
+            })
+           } catch (error) {
+            setLoading(false);
+        }
     },[]);
 
-    return (
+    return loading ? (
+        <Loader />
+    ) : 
+    (
     <>
     <GoBackBtn label={'home'} />
+    <div className="project-section">
     {
         Object.keys(selected).length > 0 ? 
         <>
@@ -51,6 +63,7 @@ export const Projects = () => {
         </div>
         </>
     }
+    <div className="project-list">
     {
          projects && projects.length>0 && projects.map((item) =>{
             return(
@@ -59,6 +72,8 @@ export const Projects = () => {
             </div>)
             })
     }
+    </div>
+    </div>
 
     </>
     )

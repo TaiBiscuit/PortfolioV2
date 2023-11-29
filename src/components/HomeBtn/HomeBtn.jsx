@@ -5,8 +5,10 @@ export const HomeBtn = ({label}) => {
   const navigate = useNavigate()
     
   function handleGoTo (here) {
-    const goHere = here.innerText.trim().toLowerCase();
-    navigate(`/${goHere}`);
+    const goHere = here.innerText.toLowerCase();
+    const noSpaces = goHere.replace(/\s/g, "");
+    console.log(noSpaces)
+    navigate(`/${noSpaces}`); 
   }
   return(
     <button className='home-btn' onClick={(e) => handleGoTo(e.target)}>{label}</button>
