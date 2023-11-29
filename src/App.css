@@ -94,6 +94,18 @@ cursor: pointer;
 }
 
 
+
+/* PROJECTS */
+
+
+
+.slected-project-img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
 /* QUERIES */
 
 @media only screen and (max-width:1500px){
@@ -163,6 +175,21 @@ cursor: pointer;
     height: 10vh;
   }
   
+
+  /* PROJECT */
+
+  .selected-project{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-container{
+    width: 15rem;
+    height: 25vh;
+  }
+
 }
 
 
