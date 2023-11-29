@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { Default, ES } from "../main/script.js";
-import { Projects, About, Contact } from "../pages/index.js";
+import { Projects, About, Contact, Extra } from "../pages/index.js";
 
 export const MainRoutes = () => {
     return(
@@ -11,6 +11,7 @@ export const MainRoutes = () => {
                 <Route exact path="/projects" element={<Projects />}/>
                 <Route exact path="/aboutme" element={<About />}/>
                 <Route exact path="/contact" element={<Contact />}/>
+                <Route exact path="/extra" element={<Extra />}/>
             </Routes>
         </BrowserRouter>
     )
