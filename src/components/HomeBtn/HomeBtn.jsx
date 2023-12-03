@@ -7,7 +7,6 @@ export const HomeBtn = ({label}) => {
   function handleGoTo (here) {
     const goHere = here.innerText.toLowerCase();
     const noSpaces = goHere.replace(/\s/g, "");
-    console.log(noSpaces)
     navigate(`/${noSpaces}`); 
   }
   return(

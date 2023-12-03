@@ -7,7 +7,7 @@ export const Home = () => {
     <>
     <div className="main-container">
         <div className="home-img-container">
-            <img src="https://i.ibb.co/r7YXMVJ/Nico.jpg" alt="" className="home-img" />
+            <img src="https://i.ibb.co/wwDVPxk/Nico.jpg" alt="" className="home-img" />
         </div>
         <div className="btn-section">
             <div className="first-set">
