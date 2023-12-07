@@ -5,7 +5,7 @@ export const ProjectBtn = ({label}) => {
   
     return(
         <>
-        <button className='home-btn'>{label}</button>
+        <button className='home-btn custom-btn'>{label}</button>
         </>
 );
 }

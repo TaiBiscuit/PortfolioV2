@@ -10,6 +10,6 @@ export const HomeBtn = ({label}) => {
     navigate(`/${noSpaces}`); 
   }
   return(
-    <button className='home-btn' onClick={(e) => handleGoTo(e.target)}>{label}</button>
+    <button className='home-btn custom-btn' onClick={(e) => handleGoTo(e.target)}>{label}</button>
 );
 }
