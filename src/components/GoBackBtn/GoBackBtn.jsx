@@ -9,6 +9,6 @@ export const GoBackBtn = ({label}) => {
     navigate(`/${goHere}`);
   }
   return(
-    <button className='return-btn  custom-btn' onClick={(e) => handleGoTo(e.target)}>{label}</button>
+    <button className='return-btn custom-btn-2' onClick={(e) => handleGoTo(e.target)}>Home</button>
 );
 }

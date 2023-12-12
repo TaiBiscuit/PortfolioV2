@@ -5,7 +5,8 @@ export const Extra = () => {
     return (
     <>
         <GoBackBtn label={'home'} />
-        <h1 className="header-h1" id="projects-header">Extras</h1>
+
+        <p className="extra-intro">I am also active in these coding platforms!</p>
         <div className="extras-zone">
                 <a href="https://www.frontendmentor.io/profile/TaiBiscuit" target="_blank"><button className="extra-btn-B">Frontend Mentor</button></a>
                 <a href="https://leetcode.com/TaiBiscuit/" target="_blank"><button className="extra-btn-B">LeetCode</button></a>

@@ -32,6 +32,28 @@ export const About = () => {
         writeTechText(itemId)
     };
 
+    const checkAltTech = (id) =>{
+        const itemSelected = document.getElementById(`${id}`)
+        const itemId = parseInt(itemSelected.id);
+
+        writeAltTechText(itemId)
+    }
+
+    const writeTechText = (id) => {
+        const techText = document.getElementById('tech-info');
+        const textInfo = data[id -1].info;
+        
+        techText.innerHTML=
+        `
+        <div class="tech-info-choosen animate__animated animate__bounceIn">
+        <img src="${data[id -1].image}" class="tech-info-img" />
+        </div>
+        <div class="tech-info-txt animate__animated animate__bounceInRight">
+            ${textInfo}
+        </div>
+        `
+    }
+
 
     useEffect(()=>{
         getTechData()
@@ -47,7 +69,7 @@ export const About = () => {
             <p id="about-txt" className="about-txt">Hello! My name is Nico, a Frontend developer from Argentina. I am a Computer Science student at UBA (Unviersidad de Buenos Aires) and learning Fullstack development at Coderhouse and I am interested in everything referred to web development. I can also speak Spanish at a native level, and Japanese at an intermediate level. I am currently looking for my first work experience in the IT field, in the meantime I keep learning and making projects.</p>
         </div>
         <div className="tech-section">
-            <p>Technologies that I use</p>
+            <p className="tech-i-use">Technologies that I use</p>
             <div className="tech-icons-zone" id="tech-zone">
             {
                 data && data.length>0 && data.map((item) =>{

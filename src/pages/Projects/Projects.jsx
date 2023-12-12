@@ -6,6 +6,7 @@ export const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [selected, setSelected] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [currentBtn, setCurrentBtn] = useState([]);
 
     const getProjectData = () => {
         fetch('./assets/projects.json')
@@ -26,6 +27,22 @@ export const Projects = () => {
         setSelected(result)
     }
 
+    function changeCss (thisOne) {
+        let newBtn = thisOne.target.innerHTML;
+        setCurrentBtn(newBtn);
+        let btns = document.querySelectorAll('.custom-btn');
+        btns.forEach(btn => {
+            if(btn.innerHTML == currentBtn){
+                btn.classList.remove('home-btn') 
+                btn.classList.add('return-btn')  
+            } else {
+                btn.classList.remove('return-btn') 
+                btn.classList.add('home-btn')  
+            }
+
+        });
+    }
+
     useEffect(()=>{
         try {
             setLoading(true);
@@ -38,12 +55,14 @@ export const Projects = () => {
         }
     },[]);
 
+
+
     return loading ? (
         <Loader />
     ) : 
     (
     <>
-    <GoBackBtn label={'home'} />
+    <GoBackBtn label={'Home'} />
     <div className="project-section">
     {
         Object.keys(selected).length > 0 ? 
@@ -53,7 +72,7 @@ export const Projects = () => {
             <div className="img-container">
                <img src={selected.image} alt="" className="slected-project-img"/>
             </div>
-            <a href={selected.link} target="_blank"><button>Go to Project</button></a>
+            <a href={selected.link} target="_blank"><button className="go-project-btn custom-btn-2">Go to Project</button></a>
         </div>
         </>
         :
@@ -67,7 +86,7 @@ export const Projects = () => {
     {
          projects && projects.length>0 && projects.map((item) =>{
             return(
-            <div className={`project-A project-zone-${item.id} `} key={item.key} onClick={(e) => {handleShowProject(e)}}>
+            <div className={`project-A project-zone-${item.id} `} key={item.key} onClick={(e) => {handleShowProject(e); changeCss(e)}}>
                 <ProjectBtn label={item.title} />
             </div>)
             })

@@ -9,7 +9,7 @@ export const Contact = () => {
     <>
         <GoBackBtn label={'home'} />
         <div className="contact-section">
-            <p>AA</p>
+            <p>You can contact me in all the places below!</p>
             <div className="contact-icons">
                     <div className="contact-link">
                         <a href="https://github.com/TaiBiscuit" className="contact-link" target="_blank">

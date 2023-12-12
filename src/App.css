@@ -6,6 +6,11 @@
   font-family: 'Kumbh Sans', sans-serif;
 }
 
+#appBody{
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -18,14 +23,7 @@ h1 {
   line-height: 1.1;
 }
 
-.return-btn{
-  margin: 2rem 0;
-  background: #000;
-  color: black;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
+
 
 /* HOME */
 
@@ -82,6 +80,21 @@ h1 {
     display: inline-block;
   }
 
+  .custom-btn-2 {
+    width: 440px;
+    height: 80px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
   .home-btn {
     background: #000;
     color: #fff;
@@ -127,7 +140,85 @@ h1 {
     transition:800ms ease all;
   }
 
+  .return-btn {
+    border: solid 1px black;
+    background: white;
+    color: black;
+    line-height: 42px;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+    
+  .return-btn:hover {
+    background: black;
+    color: white;
+        box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+        border: none;
+  }
+  
+  .return-btn:before,
+  .return-btn:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: white;
+    transition:400ms ease all;
+  }
+  
+  .return-btn:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  
+  .return-btn:hover:before,
+  .return-btn:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
 
+  .go-project-btn {
+    z-index: 2;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .go-project-btn:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .go-project-btn:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: #fff;
+  }
+
+  .go-project-btn:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    background: #000;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  }
 
 /* PROJECTS */
 
@@ -159,7 +250,13 @@ h1 {
   }
 
   .project-list{
-    width: 30vh;
+    width: 51vh;
+  }
+
+  .go-project-btn{
+    margin-top: 1rem;
+    width: 440px;
+    height: 80px;
 }
 
 
@@ -238,6 +335,15 @@ margin-top: 2rem;
   transform: scale(1.5);
 }
 
+.tech-info{
+  margin-bottom: 5rem;
+}
+
+.tech-i-use{
+  font-size: 30px;
+  font-weight: 700;
+}
+
 
 /* CONTACT */
 
@@ -300,13 +406,16 @@ margin-top: 2rem;
 
   .extras-zone{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 30vh;
     padding: 0 2rem 5rem 2rem;
     justify-content: space-around;
+    margin-top: 16rem;
   }
 
+  .extra-intro{
+    margin-top: 3rem;
+  }
+  
   .extra-btn{
     padding: 1.5rem;
     border-radius: 15px;
@@ -352,6 +461,7 @@ margin-top: 2rem;
 
   .project-list{
     margin-right: 10rem;
+    width: 30vh;
   }
 
 
@@ -472,9 +582,17 @@ margin-top: 2rem;
     width: 70vw;
   }
 
-  .home-btn{
+  .home-btn, .return-btn, .go-project-btn{
     width: 20rem;
     height: 10vh;
+  }
+
+  .return-btn{
+    margin-bottom: 4rem;
+  }
+
+  .go-project-btn{
+    margin-bottom: 1rem;
   }
   
 
@@ -547,6 +665,16 @@ margin-top: 2rem;
     height: 200px;
   }
 
+  .tech-info{
+    flex-direction: column;
+  }
+
+  .tech-info-txt{
+    margin-bottom: 5rem;
+  }
+
+  
+
   /* CONTACT */
 
   .contact-section{
@@ -568,17 +696,19 @@ margin-top: 2rem;
 
   /* EXTRA */
 
-  .extra-section{
-    margin-top: 5rem;
-    width: 100vw;
-    max-width:100%;
-    height: 100vh;
+  .extras-zone{
     display: flex;
     flex-direction: column;
+    margin-top: 3rem;
   }
 
   .extra-btn-B{
     margin-top: 1rem;
+    width: 10rem;
+  }
+
+  .extra-intro{
+    margin-top: 0;
   }
 
 }
@@ -586,7 +716,7 @@ margin-top: 2rem;
 
 @media only screen and (max-width:360px){
 
-  .home-btn{
+  .home-btn, .return-btn, .go-project-btn{
     width: 15rem;
   }
 
