@@ -5,7 +5,7 @@ import { GoBackBtn, ProjectBtn, Loader } from "../../components";
 export const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [selected, setSelected] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [currentBtn, setCurrentBtn] = useState([]);
 
     const getProjectData = () => {
@@ -30,6 +30,9 @@ export const Projects = () => {
     function changeCss (thisOne) {
         let newBtn = thisOne.target.innerHTML;
         setCurrentBtn(newBtn);
+    }
+
+    function changeBtn() {
         let btns = document.querySelectorAll('.custom-btn');
         btns.forEach(btn => {
             if(btn.innerHTML == currentBtn){
@@ -45,6 +48,14 @@ export const Projects = () => {
 
     useEffect(()=>{
         try {
+            changeBtn()
+           } catch (error) {
+            setLoading(false);
+        }
+    },[currentBtn]);
+
+    useEffect(()=>{
+        try {
             setLoading(true);
             getProjectData()
             .finally(() => {
@@ -54,7 +65,6 @@ export const Projects = () => {
             setLoading(false);
         }
     },[]);
-
 
 
     return loading ? (

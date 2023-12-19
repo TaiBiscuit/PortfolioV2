@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GoBackBtn } from "../../components";
 
 export const About = () => {
     const [data, setData] = useState([]);
 /*     const [altData, setAltData] = useState([]); */
     const [loading, setLoading] = useState(true);
+    const ref = useRef(null);
 
     const getTechData = () => {
         fetch('./assets/tech.json')
@@ -52,6 +53,7 @@ export const About = () => {
             ${textInfo}
         </div>
         `
+        ref.current?.scrollIntoView({behavior: 'smooth'});
     }
 
 
@@ -83,7 +85,7 @@ export const About = () => {
                 )
             }
             </div>
-            <div className="tech-info" id="tech-info">
+            <div className="tech-info" id="tech-info" ref={ref}>
 
             </div>
         </div>

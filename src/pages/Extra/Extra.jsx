@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { GoBackBtn } from "../../components";
-
+import { GoBackBtn, Loader} from "../../components";
 export const Extra = () => {
     return (
     <>

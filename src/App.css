@@ -3,6 +3,7 @@
   max-width: 1920px;
   text-align: center;
   overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Kumbh Sans', sans-serif;
 }
 
@@ -16,6 +17,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -28,18 +30,65 @@ h1 {
 /* HOME */
 
   .main-container{
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .home-img-container{
-  width: 20rem;
-  min-height: 33vh;
-  margin-bottom: 2rem;
-  border: none;
+  .home-img-container {
+    height: 20rem;
+    width: 33vh;
+    margin: 2rem 0;
+    position: relative;
+  }
+  
+  .box__line {
+    position: absolute;
+    background: black;
+  }
+  .box__line--top, .box__line--bottom {
+    height: 8px;
+    width: 100%;
+  }
+  .box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: black;
+  }
+  .box__line--top {
+    top: -8px;
+  }
+  .box__line--top::before {
+    left: 0;
+    bottom: -8px;
+  }
+  .box__line--top::after {
+    right: 0;
+    bottom: -8px;
+  }
+  .box__line--bottom {
+    bottom: -8px;
+  }
+  .box__line--bottom::before {
+    left: 0;
+    top: -8px;
+  }
+  .box__line--bottom::after {
+    right: 0;
+    top: -8px;
+  }
+  .box__line--left, .box__line--right {
+    width: 8px;
+    height: 100%;
+  }
+  .box__line--left {
+    left: -8px;
+  }
+  .box__line--right {
+    right: -8px;
   }
 
   .btn-section{
@@ -303,7 +352,7 @@ h1 {
   }
 
   .about-img-container{
-    width: 57rem;
+    width: 50vw;
     height: 40vh;
     margin-bottom: 2rem;
     border: none;
@@ -368,6 +417,7 @@ margin-top: 2rem;
 .tech-i-use{
   font-size: 30px;
   font-weight: 700;
+  text-decoration: underline;
 }
 
 
@@ -445,6 +495,18 @@ margin-top: 2rem;
 
 
 /* QUERIES */
+
+
+
+@media only screen and (max-width:1700px){
+
+  .about-img-container{
+    height: 32vh;
+    width: 60rem;
+  }
+
+}
+
 
 @media only screen and (max-width:1500px){
 
@@ -555,17 +617,13 @@ margin-top: 2rem;
 }
 
 
-@media only screen and (max-width:1600px){
-
-  .about-img-container{
-    height: 32vh;
-    width: 60rem;
-  }
-
-}
 
 @media only screen and (max-width:489px){
 
+  #root{
+    overflow-y: auto;
+  }
+  
   body{
     display: block;
   }
@@ -579,7 +637,7 @@ margin-top: 2rem;
   }
 
   .home-img-container{
-    min-width: 15rem;
+    min-width: 19rem;
     min-height: 37vh;
     margin-bottom: 2rem;
     border: none;
@@ -651,7 +709,7 @@ margin-top: 2rem;
 
   .about-img-container{
     width: 15rem;
-    height: 33vh;
+    height: 39vh;
     margin-bottom: 2rem;
     border: none;
     margin-left: 0;
