@@ -36,9 +36,10 @@ h1 {
     justify-content: center;
   }
 
+
   .home-img-container {
-    height: 20rem;
-    width: 33vh;
+    height: 22rem;
+    width: 20vw;
     margin: 2rem 0;
     position: relative;
   }
@@ -307,7 +308,7 @@ h1 {
   .project-list { grid-area: project-list; }
 
   .img-container{
-    width: 50rem;
+    width: 40vw;
     height: 45vh;
     border-radius: 10px;
     border: 5px solid black;
@@ -499,7 +500,6 @@ margin-top: 2rem;
 
 
 @media only screen and (max-width:1700px){
-
   .about-img-container{
     height: 32vh;
     width: 60rem;
@@ -517,8 +517,8 @@ margin-top: 2rem;
   }
 
   .img-container{
-    width: 33rem;
-    height: 50vh;
+    width: 40vw;
+    height: 44vh;
   }
 
   .project-list{
@@ -813,4 +813,9 @@ margin-top: 2rem;
     height: 200px;
   }
 
+}
+
+
+.hide{
+  display: none;
 }
