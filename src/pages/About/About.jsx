@@ -56,6 +56,9 @@ export const About = () => {
         ref.current?.scrollIntoView({behavior: 'smooth'});
     }
 
+    setTimeout(() => {
+        document.querySelector('.main-section').classList.remove('hide')
+      }, "500");
 
     useEffect(()=>{
         getTechData()
@@ -63,30 +66,32 @@ export const About = () => {
     
     return (
     <>
-        <GoBackBtn label={'home'} />
-        <div className="about-section section">
-            <div className="about-img-container">
-                <img src="https://i.ibb.co/r7YXMVJ/Nico.jpg" alt="" className="home-img"  />
+        <div className="hide main-section animate__animated animate__fadeIn">
+            <GoBackBtn label={'home'} />
+            <div className="about-section section">
+                <div className="about-img-container">
+                    <img src="https://i.ibb.co/r7YXMVJ/Nico.jpg" alt="" className="home-img"  />
+                </div>
+                <p id="about-txt" className="about-txt">Hello! My name is Nico, a Frontend developer from Argentina. I am a Computer Science student at UBA (Universidad de Buenos Aires) and learning Fullstack development at Coderhouse and I am interested in everything referred to web development. I can also speak Spanish at a native level, and Japanese at an intermediate level. I am currently looking for my first work experience in the IT field, in the meantime I keep learning and making projects.</p>
             </div>
-            <p id="about-txt" className="about-txt">Hello! My name is Nico, a Frontend developer from Argentina. I am a Computer Science student at UBA (Universidad de Buenos Aires) and learning Fullstack development at Coderhouse and I am interested in everything referred to web development. I can also speak Spanish at a native level, and Japanese at an intermediate level. I am currently looking for my first work experience in the IT field, in the meantime I keep learning and making projects.</p>
-        </div>
-        <div className="tech-section">
-            <p className="tech-i-use">Technologies that I use</p>
-            <div className="tech-icons-zone" id="tech-zone">
-            {
-                data && data.length>0 && data.map((item) =>{
-                    return(
-                        <div className='tech' key={item.key} id={item.id} onClick={() => checkTech(item.id)}>
-                        <img src={item.image} alt="Tech" className="tech-img"/>
-                        <p className="tech-txt">{item.name}</p>
-                        </div>
+            <div className="tech-section">
+                <p className="tech-i-use">Technologies that I use</p>
+                <div className="tech-icons-zone" id="tech-zone">
+                {
+                    data && data.length>0 && data.map((item) =>{
+                        return(
+                            <div className='tech' key={item.key} id={item.id} onClick={() => checkTech(item.id)}>
+                            <img src={item.image} alt="Tech" className="tech-img"/>
+                            <p className="tech-txt">{item.name}</p>
+                            </div>
+                        )
+                    }
                     )
                 }
-                )
-            }
-            </div>
-            <div className="tech-info" id="tech-info" ref={ref}>
+                </div>
+                <div className="tech-info" id="tech-info" ref={ref}>
 
+                </div>
             </div>
         </div>
     </>

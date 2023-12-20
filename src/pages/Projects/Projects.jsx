@@ -46,6 +46,10 @@ export const Projects = () => {
         });
     }
 
+    setTimeout(() => {
+        document.querySelector('.main-section').classList.remove('hide')
+      }, "500");
+
     useEffect(()=>{
         try {
             changeBtn()
@@ -72,36 +76,38 @@ export const Projects = () => {
     ) : 
     (
     <>
-    <GoBackBtn label={'Home'} />
-    <div className="project-section">
-    {
-        Object.keys(selected).length > 0 ? 
-        <>
-        <div className="selected-project">
-            <h1>{selected.title}</h1>
-            <div className="img-container">
-               <img src={selected.image} alt="" className="slected-project-img"/>
+    <div className="hide main-section animate__animated animate__fadeIn">
+        <GoBackBtn label={'Home'} />
+        <div className="project-section">
+        {
+            Object.keys(selected).length > 0 ? 
+            <>
+            <div className="selected-project">
+                <h1>{selected.title}</h1>
+                <div className="img-container">
+                <img src={selected.image} alt="" className="slected-project-img"/>
+                </div>
+                <a href={selected.link} target="_blank"><button className="go-project-btn custom-btn-2">Go to Project</button></a>
             </div>
-            <a href={selected.link} target="_blank"><button className="go-project-btn custom-btn-2">Go to Project</button></a>
-        </div>
-        </>
-        :
-        <>
-        <div className="selected-project">
+            </>
+            :
+            <>
+            <div className="selected-project">
 
+            </div>
+            </>
+        }
+        <div className="project-list animate__animated animate__fadeIn">
+        {
+            projects && projects.length>0 && projects.map((item) =>{
+                return(
+                <div className={`project-A project-zone-${item.id} `} key={item.key} onClick={(e) => {handleShowProject(e); changeCss(e)}}>
+                    <ProjectBtn label={item.title} />
+                </div>)
+                })
+        }
         </div>
-        </>
-    }
-    <div className="project-list">
-    {
-         projects && projects.length>0 && projects.map((item) =>{
-            return(
-            <div className={`project-A project-zone-${item.id} `} key={item.key} onClick={(e) => {handleShowProject(e); changeCss(e)}}>
-                <ProjectBtn label={item.title} />
-            </div>)
-            })
-    }
-    </div>
+        </div>
     </div>
 
     </>

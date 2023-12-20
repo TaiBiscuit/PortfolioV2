@@ -5,17 +5,17 @@ import { HomeBtn } from "../../components/HomeBtn/HomeBtn";
 export const Home = () => {
 
     setTimeout(() => {
-        document.querySelector('.first-set').classList.add('animate__fadeIn')
-        document.querySelector('.first-set').classList.remove('hide')
-        document.querySelector('.second-set').classList.add('animate__fadeIn')
-        document.querySelector('.second-set').classList.remove('hide')
-      }, "1000");
+        document.querySelector('.main-container').classList.remove('hide')
+      }, "500");
+
+    setTimeout(() => {
+        document.querySelector('.btn-section').classList.remove('hide')
+      }, "1500");
 
     return (
     <>
-    <div className="main-container">
-        
-        <div className=" animate__animated animate__fadeIn home-img-container">
+    <div className=" hide main-container">
+        <div className="animate__animated animate__fadeIn home-img-container">
             <div className="box__line box__line--top"></div>
             <div className="box__line box__line--right"></div>
             <div className="box__line box__line--bottom"></div>
@@ -24,12 +24,12 @@ export const Home = () => {
         </div>
         <p>Hey! I am Nico</p>
         <p>A web developer</p>
-        <div className=" btn-section">
-            <div className="hide first-set">
+        <div className=" hide btn-section animate__animated animate__fadeIn">
+            <div className="first-set">
                 <HomeBtn label='Projects'/>
                 <HomeBtn label='About Me'/>
             </div>
-            <div className="hide second-set">
+            <div className=" second-set">
                 <HomeBtn label='Contact'/>
                 <HomeBtn label='Extra'/>
             </div>
