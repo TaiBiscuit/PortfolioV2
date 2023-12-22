@@ -92,9 +92,41 @@ h1 {
     right: -8px;
   }
 
+  .title{
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .sub-title{
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+  }
+
+  .sub-title-span-A{
+    font-size: 30px;
+    background-image: linear-gradient(
+    -225deg,
+    #b8e2f1 0%,
+    #8edbf7 29%,
+    #45c0ec 67%,
+    #04b0ee 100%
+    );
+    animation: textclip 2s linear infinite;
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .btn-section{
   width: 100vw;
-  height: 50vh;
+  height: 26vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -638,7 +670,7 @@ margin-top: 2rem;
 
   .home-img-container{
     min-width: 19rem;
-    min-height: 37vh;
+    height: 19rem;
     margin-bottom: 2rem;
     border: none;
   }
@@ -646,7 +678,9 @@ margin-top: 2rem;
   .btn-section{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 70vw;
+    height: 59vh;
   }
 
   .home-btn, .return-btn, .go-project-btn{
@@ -815,7 +849,16 @@ margin-top: 2rem;
 
 }
 
-
 .hide{
   display: none;
+}
+
+
+
+/* ANIMATIONS */
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }

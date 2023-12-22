@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import '../../styles/home.css'
 import { HomeBtn } from "../../components/HomeBtn/HomeBtn";
 
 export const Home = () => {
@@ -22,8 +21,8 @@ export const Home = () => {
             <div className="box__line box__line--left"></div>
             <img src="https://i.ibb.co/wwDVPxk/Nico.jpg" alt="" className="home-img" />
         </div>
-        <p>Hey! I am Nico</p>
-        <p>A web developer</p>
+        <p className="title">Hey! I am Nico</p>
+        <p className="sub-title">A <span className="sub-title-span-A">web developer</span></p>
         <div className=" hide btn-section animate__animated animate__fadeIn">
             <div className="first-set">
                 <HomeBtn label='Projects'/>
