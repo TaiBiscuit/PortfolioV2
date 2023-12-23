@@ -545,7 +545,8 @@ margin-top: 2rem;
   /* HOME */
 
   .home-img-container{
-    min-width: 21rem;
+    height: 18rem;
+    width: 20vw;
   }
 
   .img-container{
