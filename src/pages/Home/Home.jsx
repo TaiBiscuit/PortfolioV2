@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { HomeBtn } from "../../components/HomeBtn/HomeBtn";
+import {About, Projects} from '../index';
 
 export const Home = () => {
 
@@ -9,6 +10,7 @@ export const Home = () => {
 
     setTimeout(() => {
         document.querySelector('.btn-section').classList.remove('hide')
+        document.querySelector('.rest').classList.remove('hide')
       }, "1500");
 
     return (
@@ -29,8 +31,8 @@ export const Home = () => {
                 <HomeBtn label='About Me'/>
             </div>
             <div className=" second-set">
-                <HomeBtn label='Contact'/>
                 <HomeBtn label='Extra'/>
+                <HomeBtn label='Contact'/>
             </div>
         </div>
     </div>

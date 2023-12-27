@@ -6,6 +6,7 @@ export const About = () => {
 /*     const [altData, setAltData] = useState([]); */
     const [loading, setLoading] = useState(true);
     const ref = useRef(null);
+    const currentUrl = location.pathname.includes('/aboutme');
 
     const getTechData = () => {
         fetch('./assets/tech.json')
@@ -14,7 +15,6 @@ export const About = () => {
         })
         .then(function(myJson){
             setData(myJson);
-            console.log(myJson)
             setLoading(false)
         });
 /*         fetch('./assets/techES.json')
@@ -67,7 +67,15 @@ export const About = () => {
     return (
     <>
         <div className="hide main-section animate__animated animate__fadeIn">
-            <GoBackBtn label={'home'} />
+        {
+            currentUrl ?
+            <>
+            <GoBackBtn label={'Home'} />
+            </>
+            :
+            <>
+            </>
+        }
             <div className="about-section section">
                 <div className="about-img-container">
                     <img src="https://i.ibb.co/r7YXMVJ/Nico.jpg" alt="" className="home-img"  />

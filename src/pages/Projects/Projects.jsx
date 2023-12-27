@@ -7,6 +7,7 @@ export const Projects = () => {
     const [selected, setSelected] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentBtn, setCurrentBtn] = useState([]);
+    const currentUrl = location.pathname.includes('/projects');
 
     const getProjectData = () => {
         fetch('./assets/projects.json')
@@ -22,9 +23,12 @@ export const Projects = () => {
 
 
     function handleShowProject (here) {
-        const selectedProject = here.target.innerText
-        const result = projects.find(({ title }) => title == selectedProject);
-        setSelected(result)
+        setSelected([]);
+        setTimeout(() => {
+            const selectedProject = here.target.innerText
+            const result = projects.find(({ title }) => title == selectedProject);
+            setSelected(result)
+          }, "500");
     }
 
     function changeCss (thisOne) {
@@ -77,12 +81,20 @@ export const Projects = () => {
     (
     <>
     <div className="hide main-section animate__animated animate__fadeIn">
-        <GoBackBtn label={'Home'} />
+        {
+            currentUrl ?
+            <>
+            <GoBackBtn label={'Home'} />
+            </>
+            :
+            <>
+            </>
+        }
         <div className="project-section">
         {
             Object.keys(selected).length > 0 ? 
             <>
-            <div className="selected-project">
+            <div className="selected-project animate__animated animate__fadeIn">
                 <h1>{selected.title}</h1>
                 <div className="img-container">
                 <img src={selected.image} alt="" className="slected-project-img"/>

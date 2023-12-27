@@ -102,7 +102,7 @@ h1 {
     font-size: 25px;
     margin-top: 0;
     margin-bottom: 20px;
-
+    padding-bottom: 2rem;
   }
 
   .sub-title-span-A{
@@ -130,6 +130,7 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-bottom: 4rem;
   }
 
   .first-set, .second-set{
@@ -862,4 +863,9 @@ margin-top: 2rem;
   to {
     background-position: 200% center;
   }
+}
+
+
+.rest{
+  margin-top: 20rem;
 }

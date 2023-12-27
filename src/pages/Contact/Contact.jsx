@@ -5,13 +5,23 @@ import { ImLinkedin } from "react-icons/im";
 import { GoBackBtn } from "../../components";
 
 export const Contact = () => {
+    const currentUrl = location.pathname.includes('/contact');
+
     setTimeout(() => {
         document.querySelector('.main-container').classList.remove('hide')
       }, "500");
     return (
     <>
         <div className="hide main-container animate__animated animate__fadeIn">
-            <GoBackBtn label={'home'} />
+        {
+            currentUrl ?
+            <>
+            <GoBackBtn label={'Home'} />
+            </>
+            :
+            <>
+            </>
+        }
             <div className="contact-section">
                 <p>You can contact me in all the places below!</p>
                 <div className="contact-icons">
