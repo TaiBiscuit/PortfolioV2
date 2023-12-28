@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { HomeBtn } from "../../components/HomeBtn/HomeBtn";
-import {About, Projects} from '../index';
+import {About, Projects, Extra, Contact} from '../index';
 
 export const Home = () => {
 
     setTimeout(() => {
-        document.querySelector('.main-container').classList.remove('hide')
+        const sections = document.querySelectorAll('.main-container')
+        sections.forEach(element => {
+            element.classList.remove('hide')
+        });
       }, "500");
 
     setTimeout(() => {
@@ -35,6 +38,12 @@ export const Home = () => {
                 <HomeBtn label='Contact'/>
             </div>
         </div>
+    </div>
+    <div className=" hide rest">
+        <About />
+        <Projects />
+        <Extra />
+        <Contact />
     </div>
     </>
     )

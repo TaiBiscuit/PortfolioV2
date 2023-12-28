@@ -57,7 +57,10 @@ export const About = () => {
     }
 
     setTimeout(() => {
-        document.querySelector('.main-section').classList.remove('hide')
+        const sections = document.querySelectorAll('.main-section')
+        sections.forEach(element => {
+            element.classList.remove('hide')
+        });
       }, "500");
 
     useEffect(()=>{
