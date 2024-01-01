@@ -27,6 +27,10 @@ h1 {
 }
 
 
+.rest{
+  margin-top: 20rem;
+}
+
 
 /* HOME */
 
@@ -536,7 +540,7 @@ margin-top: 2rem;
 @media only screen and (max-width:1700px){
   .about-img-container{
     height: 32vh;
-    width: 60rem;
+    width: 53vw;
   }
 
 }
@@ -569,7 +573,7 @@ margin-top: 2rem;
   }
   
   .about-img-container{
-    height: 33vh;
+    height: 25vh;
   }
 
 
@@ -663,6 +667,14 @@ margin-top: 2rem;
     display: block;
   }
 
+  h1{
+    margin-bottom: 2rem;
+  }
+
+  .rest{
+    margin-top: 0;
+  }
+
   /* HOME */
 
   .main-container{
@@ -712,6 +724,7 @@ margin-top: 2rem;
   }
 
   .selected-project{
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -746,7 +759,7 @@ margin-top: 2rem;
 
   .about-img-container{
     width: 15rem;
-    height: 39vh;
+    height: 28vh;
     margin-bottom: 2rem;
     border: none;
     margin-left: 0;
@@ -765,8 +778,8 @@ margin-top: 2rem;
   }
 
   .tech-img{
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
   }
 
   .tech-info{
@@ -867,6 +880,3 @@ margin-top: 2rem;
 }
 
 
-.rest{
-  margin-top: 20rem;
-}

@@ -40,9 +40,13 @@ export const Home = () => {
         </div>
     </div>
     <div className=" hide rest">
+        <h1>About me</h1>
         <About />
+        <h1>Some of my Projects</h1>
         <Projects />
+        <h1>Extra</h1>
         <Extra />
+        <h1>Contact me!</h1>
         <Contact />
     </div>
     </>
