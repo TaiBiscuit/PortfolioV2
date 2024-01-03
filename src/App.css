@@ -5,6 +5,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Kumbh Sans', sans-serif;
+  transition: all 0.2s;
 }
 
 #appBody{
@@ -23,7 +24,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  background-color: rgba(255, 255, 255, 0.87);
+}
+
+.section-sub, .title, .sub-title{
+  font-family: 'Kanit', sans-serif;
 }
 
 
@@ -31,6 +35,20 @@ h1 {
   margin-top: 20rem;
 }
 
+.nav-bars{
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  z-index: 4;
+}
+
+.nav-ul{
+
+}
+
+.section-nav{
+  display: none;
+}
 
 /* HOME */
 
@@ -110,7 +128,7 @@ h1 {
     padding-bottom: 2rem;
   }
 
-  .sub-title-span-A{
+  .sub-title-span-B{
     font-size: 30px;
     background-image: linear-gradient(
     -225deg,
@@ -128,6 +146,25 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .sub-title-span-A{
+    font-size: 30px;
+    background-image: linear-gradient(
+    -225deg,
+    #8855e9 0%,
+    #5319bd 29%,
+    #3e1291 67%,
+    #2a1949 100%
+    );
+    animation: textclip 2s linear infinite;
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
   .btn-section{
   width: 100vw;
@@ -198,6 +235,23 @@ h1 {
     margin-top: 1rem;
   }
 
+  .custom-mode-btn {
+    width: 91px;
+    height: 40px;
+    margin-right: 1rem;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
   .home-btn {
     background: #000;
     color: #fff;
@@ -206,6 +260,8 @@ h1 {
     border: none;
     margin-bottom: 1rem;
   }
+
+  
 
   .home-btn:hover{
     background: transparent;
@@ -524,7 +580,7 @@ margin-top: 2rem;
     align-items: center;
     padding: 0 2rem 5rem 2rem;
     justify-content: space-around;
-    margin-top: 16rem;
+    margin-top: 5rem;
   }
 
   .extra-intro{
@@ -573,7 +629,8 @@ margin-top: 2rem;
   }
   
   .about-img-container{
-    height: 25vh;
+    height: 36vh;
+    width: 62vw;
   }
 
 

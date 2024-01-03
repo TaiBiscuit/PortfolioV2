@@ -1,18 +1,18 @@
 import './App.css';
 import { MainRoutes } from './routes/MainRoutes';
-/* import { ViewModeProvider } from './context/ViewModeContext';
-import { LanguageProvider } from './context/LanguageContext'; */
+import { ColorModeProvider } from './context/ColorModeContext';
+import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
 
   return (
     <>
       <div id="appBody">
-{/*       <LanguageProvider>
-      <ViewModeProvider> */}
+      <LanguageProvider>
+      <ColorModeProvider> 
         <MainRoutes />
-{/*       </ViewModeProvider>
-      </LanguageProvider> */}
+      </ColorModeProvider>
+      </LanguageProvider> 
       </div>
     </>
   )
