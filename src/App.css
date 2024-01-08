@@ -1,11 +1,11 @@
 
+
 #root {
   max-width: 1920px;
   text-align: center;
-  overflow-x: hidden;
-  overflow-y: auto;
   font-family: 'Kumbh Sans', sans-serif;
   transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.87);
 }
 
 #appBody{
@@ -18,7 +18,9 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  overflow-y: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 }
 
 h1 {
@@ -40,6 +42,8 @@ h1 {
   justify-content: flex-start;
   position: fixed;
   z-index: 4;
+  height: 7.5vh;
+  width: 100vw;
 }
 
 .nav-ul{
@@ -63,7 +67,8 @@ h1 {
   .home-img-container {
     height: 22rem;
     width: 20vw;
-    margin: 2rem 0;
+    margin-bottom: 1rem;
+    margin-top: 6rem;
     position: relative;
   }
   
@@ -248,7 +253,6 @@ h1 {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    margin-top: 1rem;
     text-align: center;
   }
 
@@ -926,7 +930,13 @@ margin-top: 2rem;
   display: none;
 }
 
+.white{
+  background-color: rgb(255, 255, 255);
+}
 
+.black{
+  background-color: #333;
+}
 
 /* ANIMATIONS */
 

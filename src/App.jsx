@@ -9,7 +9,7 @@ function App() {
     <>
       <div id="appBody">
       <LanguageProvider>
-      <ColorModeProvider> 
+      <ColorModeProvider>
         <MainRoutes />
       </ColorModeProvider>
       </LanguageProvider> 

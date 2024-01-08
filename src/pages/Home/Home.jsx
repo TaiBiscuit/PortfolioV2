@@ -3,10 +3,11 @@ import { HomeBtn } from "../../components/HomeBtn/HomeBtn";
 import {About, Projects, Extra, Contact} from '../index';
 import { NavBar } from "../../components";
 import { ColorModeContext } from "../../context/ColorModeContext";
-
+root
 export const Home = () => {
     const { lightMode} = useContext(ColorModeContext);
     const [text, setText] = useState([]);
+    const navbar = document.getElementById('nav-bars');
 
     const getText = async () => {
         await fetch('./assets/textEN.json')
@@ -19,18 +20,23 @@ export const Home = () => {
     };
 
     const checkColors = () => {
+
         if(!lightMode){
             let btns2 = document.querySelectorAll('.return-btn');
             btns2.forEach(btn => {
                 btn.classList.remove('return-btn');
                 btn.classList.add('home-btn');
-            })
+            });
+            navbar.classList.remove('black');
+            navbar.classList.add('white');
         } else {
             let btns = document.querySelectorAll('.home-btn');
             btns.forEach(btn => {
                 btn.classList.remove('home-btn');
                 btn.classList.add('return-btn');
-            })
+            });
+            navbar.classList.remove('white');
+            navbar.classList.add('black');
         }
     }
 
