@@ -30,7 +30,7 @@ export const NavBar = () => {
 
     return(
         <>
-        <div className="nav-bars white" id='nav-bars'>
+        <div className="nav-bars" id='nav-bars'>
             <nav className='modes-nav'>
                 <ul className='nav-ul'>
                     <button className='home-btn custom-mode-btn' onClick={(e) => handleViewMode(e)}>DARK MODE</button>

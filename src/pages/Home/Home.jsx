@@ -7,7 +7,6 @@ root
 export const Home = () => {
     const { lightMode} = useContext(ColorModeContext);
     const [text, setText] = useState([]);
-    const navbar = document.getElementById('nav-bars');
 
     const getText = async () => {
         await fetch('./assets/textEN.json')
@@ -27,16 +26,17 @@ export const Home = () => {
                 btn.classList.remove('return-btn');
                 btn.classList.add('home-btn');
             });
-            navbar.classList.remove('black');
-            navbar.classList.add('white');
+/*             btns4.forEach(btn => {
+                btn.classList.remove('return-btn');
+                btn.classList.add('home-btn');
+            }); */
         } else {
             let btns = document.querySelectorAll('.home-btn');
             btns.forEach(btn => {
                 btn.classList.remove('home-btn');
                 btn.classList.add('return-btn');
             });
-            navbar.classList.remove('white');
-            navbar.classList.add('black');
+
         }
     }
 
