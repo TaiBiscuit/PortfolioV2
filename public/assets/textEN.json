@@ -2,10 +2,34 @@
     {
         "id": 1,
         "key": 1,
-        "txt": "Aaaaa"
+        "txt": "Hey! I am Nico"
     },
     {
         "key":2,
-        "txt": "BBB"
+        "txt": "A "
+    },
+    {
+        "key":3,
+        "txt": "web developer"
+    },
+    {
+        "key":4,
+        "txt": "ABOUT ME"
+    },
+    {
+        "key":5,
+        "txt": "MY PROJECTS"
+    },
+    {
+        "key":6,
+        "txt": "EXTRA"
+    },
+    {
+        "key":7,
+        "txt": "CONTACT ME!"
+    },
+    {
+        "key":8,
+        "txt": "TEST"
     }
 ]

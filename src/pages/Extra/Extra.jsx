@@ -4,6 +4,7 @@ import { GoBackBtn, Loader} from "../../components";
 export const Extra = () => {
     const currentUrl = location.pathname.includes('/extra');
 
+
     setTimeout(() => {
         document.querySelector('.main-container').classList.remove('hide')
       }, "500");

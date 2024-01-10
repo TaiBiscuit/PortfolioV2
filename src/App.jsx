@@ -2,6 +2,7 @@ import './App.css';
 import { MainRoutes } from './routes/MainRoutes';
 import { ColorModeProvider } from './context/ColorModeContext';
 import { LanguageProvider } from './context/LanguageContext';
+import { TextProvider } from './context/TextContext';
 
 function App() {
 
@@ -9,9 +10,11 @@ function App() {
     <>
       <div id="appBody">
       <LanguageProvider>
-      <ColorModeProvider>
-        <MainRoutes />
-      </ColorModeProvider>
+      <TextProvider>
+        <ColorModeProvider>
+          <MainRoutes />
+        </ColorModeProvider>
+      </TextProvider>
       </LanguageProvider> 
       </div>
     </>

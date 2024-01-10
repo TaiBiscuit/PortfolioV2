@@ -45,7 +45,7 @@ export const NavBar = () => {
     }
 
     function handleLanguage(e) {
-        console.log(e)
+        setLanguage((prevState) => !prevState);
     }
 
     return(
@@ -57,10 +57,13 @@ export const NavBar = () => {
                     <img id="theme-icon"    src="https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg" alt="ERR" />
                 </div>
                 <div className="lang-container shadow-light" onClick={(e) => handleLanguage(e)}>
-                    <p>EN</p>
+                    {
+                        language ?
+                        <><p>EN</p></>
+                        :
+                        <><p>ES</p></>
+                    }
                 </div>
-{/*                     <button className='home-btn custom-mode-btn' onClick={(e) => handleViewMode(e)}>DARK MODE</button>
-                    <button className='home-btn custom-mode-btn'>LANGUAGE</button> */}
                 </ul>
             </nav>
             <nav className='section-nav'>

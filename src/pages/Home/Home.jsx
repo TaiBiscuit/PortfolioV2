@@ -3,23 +3,35 @@ import { HomeBtn } from "../../components/HomeBtn/HomeBtn";
 import {About, Projects, Extra, Contact} from '../index';
 import { NavBar } from "../../components";
 import { ColorModeContext } from "../../context/ColorModeContext";
-root
+import { LanguageContext } from "../../context/LanguageContext";
+import { TextContext } from "../../context/TextContext";
+
 export const Home = () => {
     const { lightMode} = useContext(ColorModeContext);
-    const [text, setText] = useState([]);
+    const {text, setText} = useContext(TextContext)
+    const {language} = useContext(LanguageContext);
 
     const getText = async () => {
-        await fetch('./assets/textEN.json')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(myJson){
-            setText(myJson)
-        })
-    };
+        if(language){
+            await fetch('./assets/textEN.json')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(myJson){
+                setText(myJson)
+            })
+        } else {
+            await fetch('./assets/textES.json')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(myJson){
+                setText(myJson)
+            })
+        }
+    }; 
 
     const checkColors = () => {
-
         if(!lightMode){
             let btns2 = document.querySelectorAll('.return-btn');
             let borders = document.querySelectorAll('.box__line');
@@ -30,10 +42,6 @@ export const Home = () => {
             borders.forEach(brder => {
                 brder.style.background= 'black';
             });
-/*             btns4.forEach(btn => {
-                btn.classList.remove('return-btn');
-                btn.classList.add('home-btn');
-            }); */
         } else {
             let btns = document.querySelectorAll('.home-btn');
             let borders = document.querySelectorAll('.box__line');
@@ -62,15 +70,20 @@ export const Home = () => {
     }, "1500");
     
     useEffect(()=>{
-        try {
+        try { 
             getText()
-            .finally(() => {
-                console.log(text)
-            })
-            } catch (error) {
+            } catch (error) { 
             console.log('textError')
         }
-    },[]);
+    },[]); 
+
+    useEffect(()=>{
+        try { 
+            getText()
+            } catch (error) { 
+            console.log('textError')
+        }
+    },[language]); 
 
     useEffect(()=>{
         try {
@@ -91,39 +104,56 @@ export const Home = () => {
             <div className=" box__line box__line--left"></div>
             <img src="https://i.ibb.co/wwDVPxk/Nico.jpg" alt="" className="home-img" />
         </div>
-        <p className="title">Hey! I am Nico</p>
-        <p className="sub-title">A 
         {
-            lightMode ?
+            text && text.length>0 ? 
             <>
-                <span className="sub-title-span-B"> web developer</span>
+                <p className="title">{text[0].txt}</p>
+                <p className="sub-title">{text[1].txt} 
+                {
+                    lightMode ?
+                    <>
+                        <span className="sub-title-span-B">{text[2].txt}</span>
+                    </>
+                    :
+                    <>
+                        <span className="sub-title-span-A">{text[2].txt}</span>
+                    </>
+                }
+                </p>
+                <div className=" hide btn-section animate__animated animate__fadeIn">
+                    <div className="first-set">
+                        <HomeBtn label='Projects'/>
+                        <HomeBtn label='About Me'/>
+                    </div>
+                    <div className=" second-set">
+                        <HomeBtn label='Extra'/>
+                        <HomeBtn label='Contact'/>
+                    </div>
+                </div>
             </>
             :
             <>
-                <span className="sub-title-span-A"> web developer</span>
             </>
+            
         }
-        </p>
-        <div className=" hide btn-section animate__animated animate__fadeIn">
-            <div className="first-set">
-                <HomeBtn label='Projects'/>
-                <HomeBtn label='About Me'/>
-            </div>
-            <div className=" second-set">
-                <HomeBtn label='Extra'/>
-                <HomeBtn label='Contact'/>
-            </div>
-        </div>
     </div>
     <div className=" hide rest">
-        <h1 className="section-sub">ABOUT ME</h1>
-        <About />
-        <h1 className="section-sub">SEE MY PROJECTS</h1>
-        <Projects />
-        <h1 className="section-sub">EXTRAS</h1>
-        <Extra />
-        <h1 className="section-sub">CONTACT ME!</h1>
-        <Contact />
+        {
+            text && text.length>0 ?
+            <>
+                <h1 className="section-sub">{text[3].txt} </h1>
+                <About />
+                <h1 className="section-sub">{text[4].txt} </h1>
+                <Projects />
+                <h1 className="section-sub">{text[5].txt} </h1>
+                <Extra />
+                <h1 className="section-sub">{text[6].txt}</h1>
+                <Contact />
+            </>
+            :
+            <>
+            </> 
+        }
     </div>
     </>
     )

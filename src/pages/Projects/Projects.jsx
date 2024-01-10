@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { GoBackBtn, ProjectBtn, Loader } from "../../components";
-
+import { LanguageContext } from "../../context/LanguageContext";
+import { TextContext } from "../../context/TextContext";
 
 export const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [selected, setSelected] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentBtn, setCurrentBtn] = useState([]);
+    const {text} = useContext(TextContext);
     const currentUrl = location.pathname.includes('/projects');
 
     const getProjectData = () => {
@@ -56,7 +58,7 @@ export const Projects = () => {
             element.classList.remove('hide')
         });
       }, "500");
-
+ 
     useEffect(()=>{
         try {
             changeBtn()
@@ -83,46 +85,58 @@ export const Projects = () => {
     ) : 
     (
     <>
+    
     <div className="hide main-section animate__animated animate__fadeIn">
         {
-            currentUrl ?
-            <>
-            <GoBackBtn label={'Home'} />
-            </>
-            :
-            <>
-            </>
-        }
-        <div className="project-section">
-        {
-            Object.keys(selected).length > 0 ? 
-            <>
-            <div className="selected-project animate__animated animate__fadeIn">
-                <h1>{selected.title}</h1>
-                <div className="img-container">
-                <img src={selected.image} alt="" className="slected-project-img"/>
-                </div>
-                <a href={selected.link} target="_blank"><button className="go-project-btn custom-btn-2">Go to Project</button></a>
-            </div>
-            </>
-            :
-            <>
-            <div className="selected-project">
+             text && text.length>0 ? 
+             <>
+                {
+                currentUrl ?
+                <>
+                <GoBackBtn label={'Home'} />
+                </>
+                :
+                <>
+                </>
+                }
+                <div className="project-section">
+                    <p>{text[7].txt}</p>
+                {
+                    Object.keys(selected).length > 0 ? 
+                    <>
+                    <div className="selected-project animate__animated animate__fadeIn">
+                        <h1>{selected.title}</h1>
+                        <div className="img-container">
+                        <img src={selected.image} alt="" className="slected-project-img"/>
+                        </div>
+                        <a href={selected.link} target="_blank"><button className="go-project-btn custom-btn-2">Go to Project</button></a>
+                    </div>
+                    </>
+                    :
+                    <>
+                    <div className="selected-project">
 
-            </div>
-            </>
+                    </div>
+                    </>
+                }
+                    <div className="project-list animate__animated animate__fadeIn">
+                    {
+                        projects && projects.length>0 && projects.map((item) =>{
+                            return(
+                            <div className={`project-A project-zone-${item.id} `} key={item.key} onClick={(e) => {handleShowProject(e); changeCss(e)}}>
+                                <ProjectBtn label={item.title} />
+                            </div>)
+                            })
+                    }
+                    </div>
+                </div>
+             </>
+             :
+             <>
+             </>
         }
-        <div className="project-list animate__animated animate__fadeIn">
-        {
-            projects && projects.length>0 && projects.map((item) =>{
-                return(
-                <div className={`project-A project-zone-${item.id} `} key={item.key} onClick={(e) => {handleShowProject(e); changeCss(e)}}>
-                    <ProjectBtn label={item.title} />
-                </div>)
-                })
-        }
-        </div>
-        </div>
+
+        
     </div>
 
     </>
