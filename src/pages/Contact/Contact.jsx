@@ -4,17 +4,21 @@ import { MdMail } from "react-icons/md";
 import { ImLinkedin } from "react-icons/im";
 import { GoBackBtn } from "../../components";
 import { ColorModeContext } from "../../context/ColorModeContext";
+import { TextContext } from "../../context/TextContext";
 
 export const Contact = () => {
     const currentUrl = location.pathname.includes('/contact');
     const { lightMode} = useContext(ColorModeContext);
+    const {text} = useContext(TextContext);
 
     setTimeout(() => {
         document.querySelector('.main-container').classList.remove('hide')
       }, "500");
     return (
     <>
-        <div className="hide main-container animate__animated animate__fadeIn">
+        <div className="hide main-container animate__animated animate__fadeIn" id="Contact">
+            <div id="Contacto"></div>
+        <h1 className="section-sub">{text[6].txt}</h1>
         {
             currentUrl ?
             <>

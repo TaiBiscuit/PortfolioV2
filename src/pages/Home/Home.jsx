@@ -9,9 +9,12 @@ import { TextContext } from "../../context/TextContext";
 export const Home = () => {
     const { lightMode} = useContext(ColorModeContext);
     const {text, setText} = useContext(TextContext)
-    const {language} = useContext(LanguageContext);
+    const {language, setLanguage} = useContext(LanguageContext);
+    const currentUrl = location.pathname.includes('/lang=EN');
 
-    const getText = async () => {
+    const getText = async (base) => {
+        console.log(lightMode)
+
         if(language){
             await fetch('./assets/textEN.json')
             .then(function(response) {
@@ -69,13 +72,6 @@ export const Home = () => {
         document.querySelector('.rest').classList.remove('hide')
     }, "1500");
     
-    useEffect(()=>{
-        try { 
-            getText()
-            } catch (error) { 
-            console.log('textError')
-        }
-    },[]); 
 
     useEffect(()=>{
         try { 
@@ -85,6 +81,19 @@ export const Home = () => {
         }
     },[language]); 
 
+    useEffect(()=>{
+        try { 
+            if(currentUrl){
+                let base = 'eng';
+                setLanguage(true)
+                getText(base)
+            } else {
+                getText()
+            }
+            } catch (error) { 
+            console.log('textError')
+        }
+    },[]); 
     useEffect(()=>{
         try {
             checkColors()
@@ -122,12 +131,12 @@ export const Home = () => {
                 </p>
                 <div className=" hide btn-section animate__animated animate__fadeIn">
                     <div className="first-set">
-                        <HomeBtn label='Projects'/>
-                        <HomeBtn label='About Me'/>
+                        <HomeBtn label={text[7].txt}/>
+                        <HomeBtn label={text[8].txt}/>
                     </div>
                     <div className=" second-set">
-                        <HomeBtn label='Extra'/>
-                        <HomeBtn label='Contact'/>
+                        <HomeBtn label={text[9].txt}/>
+                        <HomeBtn label={text[10].txt}/>
                     </div>
                 </div>
             </>
@@ -141,13 +150,9 @@ export const Home = () => {
         {
             text && text.length>0 ?
             <>
-                <h1 className="section-sub">{text[3].txt} </h1>
                 <About />
-                <h1 className="section-sub">{text[4].txt} </h1>
                 <Projects />
-                <h1 className="section-sub">{text[5].txt} </h1>
                 <Extra />
-                <h1 className="section-sub">{text[6].txt}</h1>
                 <Contact />
             </>
             :

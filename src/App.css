@@ -1,5 +1,4 @@
 
-
 #root {
   max-width: 1920px;
   text-align: center;
@@ -7,6 +6,7 @@
   transition: all 0.2s;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 #appBody{
@@ -19,6 +19,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -30,7 +31,9 @@ h1 {
   font-family: 'Kanit', sans-serif;
 }
 
-
+.sectionsection{
+  margin-bottom: 2rem;
+}
 .rest{
   margin-top: 20rem;
 }
@@ -116,7 +119,7 @@ h1 {
 
   .home-img-container {
     height: 22rem;
-    width: 22vw;
+    width: 20vw;
     margin-bottom: 1rem;
     margin-top: 6rem;
     position: relative;

@@ -45,7 +45,9 @@ export const NavBar = () => {
     }
 
     function handleLanguage(e) {
-        setLanguage((prevState) => !prevState);
+        setTimeout(() => {
+            setLanguage((prevState) => !prevState);
+        }, "200");
     }
 
     return(

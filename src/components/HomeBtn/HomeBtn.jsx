@@ -5,11 +5,12 @@ export const HomeBtn = ({label}) => {
   const navigate = useNavigate()
     
   function handleGoTo (here) {
-    const goHere = here.innerText.toLowerCase();
+    console.log('TODO')
+/*     const goHere = here.innerText.toLowerCase();
     const noSpaces = goHere.replace(/\s/g, "");
-    navigate(`/${noSpaces}`); 
+    navigate(`/${noSpaces}`);  */
   }
   return(
-    <button className='home-btn custom-btn' onClick={(e) => handleGoTo(e.target)}>{label}</button>
+    <a href={"#"+label}><button className='home-btn custom-btn' onClick={(e) => handleGoTo(e.target)}>{label}</button></a>
 );
 }

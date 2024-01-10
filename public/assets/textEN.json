@@ -30,6 +30,30 @@
     },
     {
         "key":8,
-        "txt": "TEST"
+        "txt": "Projects"
+    },
+    {
+        "key":9,
+        "txt": "About me"
+    },
+    {
+        "key":10,
+        "txt": "Extra"
+    },    
+    {
+        "key":11,
+        "txt": "Contact"
+    },
+    {
+        "key":12,
+        "txt": "Go to Proyect!"
+    },
+    {
+        "key":13,
+        "txt": "Home"
+    },
+    {
+        "key":14,
+        "txt": "Hello! My name is Nico, a Frontend developer from Argentina. I am a Computer Science student at UBA (Universidad de Buenos Aires) and learning Fullstack development at Coderhouse and I am interested in everything referred to web development. I can also speak Spanish at a native level, and Japanese at an intermediate level. I am currently looking for my first work experience in the IT field, in the meantime I keep learning and making projects."
     }
 ]

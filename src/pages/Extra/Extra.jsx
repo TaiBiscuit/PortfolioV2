@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { GoBackBtn, Loader} from "../../components";
+import { TextContext } from "../../context/TextContext";
 
 export const Extra = () => {
     const currentUrl = location.pathname.includes('/extra');
+    const {text} = useContext(TextContext);
 
 
     setTimeout(() => {
@@ -10,7 +12,8 @@ export const Extra = () => {
       }, "500");
     return (
     <>
-        <div className="hide main-container animate__animated animate__fadeIn">
+        <div className="hide main-container animate__animated animate__fadeIn" id="Extra">
+            <h1 className="section-sub">Extra</h1>
         {
             currentUrl ?
             <>

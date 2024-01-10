@@ -7,10 +7,11 @@ export const MainRoutes = () => {
         <BrowserRouter>
             <Routes>
                 <Route exact path="/home" element={<Default />}/>
-                <Route exact path="/" element={<Default />}/>
+                <Route path="/:lang?" element={<Default />}/>
                 <Route exact path="/projects" element={<Projects />}/>
-                <Route exact path="/aboutme" element={<About />}/>
-                <Route exact path="/contact" element={<Contact />}/>
+                <Route exact path="/proyectos" element={<Projects />}/>
+                <Route exact path="/sobremí" element={<About />}/>
+                <Route exact path="/contacto" element={<Contact />}/>
                 <Route exact path="/extra" element={<Extra />}/>
             </Routes>
         </BrowserRouter>
