@@ -22,9 +22,13 @@ export const Home = () => {
 
         if(!lightMode){
             let btns2 = document.querySelectorAll('.return-btn');
+            let borders = document.querySelectorAll('.box__line');
             btns2.forEach(btn => {
                 btn.classList.remove('return-btn');
                 btn.classList.add('home-btn');
+            });
+            borders.forEach(brder => {
+                brder.style.background= 'black';
             });
 /*             btns4.forEach(btn => {
                 btn.classList.remove('return-btn');
@@ -32,11 +36,14 @@ export const Home = () => {
             }); */
         } else {
             let btns = document.querySelectorAll('.home-btn');
+            let borders = document.querySelectorAll('.box__line');
             btns.forEach(btn => {
                 btn.classList.remove('home-btn');
                 btn.classList.add('return-btn');
             });
-
+            borders.forEach(brder => {
+                brder.style.background= 'white';
+            });
         }
     }
 
@@ -78,10 +85,10 @@ export const Home = () => {
     <NavBar />
     <div className=" hide main-container">
         <div className="animate__animated animate__fadeIn home-img-container">
-            <div className="box__line box__line--top"></div>
-            <div className="box__line box__line--right"></div>
-            <div className="box__line box__line--bottom"></div>
-            <div className="box__line box__line--left"></div>
+            <div className=" box__line box__line--top"></div>
+            <div className=" box__line box__line--right"></div>
+            <div className=" box__line box__line--bottom"></div>
+            <div className=" box__line box__line--left"></div>
             <img src="https://i.ibb.co/wwDVPxk/Nico.jpg" alt="" className="home-img" />
         </div>
         <p className="title">Hey! I am Nico</p>
