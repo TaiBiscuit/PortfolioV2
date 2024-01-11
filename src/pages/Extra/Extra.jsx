@@ -23,7 +23,15 @@ export const Extra = () => {
             <>
             </>
         }
-            <p className="extra-intro">I am also active in these coding platforms!</p>
+        {
+            text && text.length>0 ?
+            <>
+            <p className="extra-intro">{text[15].txt}</p>
+            </>
+            :
+            <>
+            </>
+        }
             <div className="extras-zone">
                 
                     <a href="https://www.frontendmentor.io/profile/TaiBiscuit" target="_blank"><button className="go-extra-btn custom-btn-3">Frontend Mentor</button></a>

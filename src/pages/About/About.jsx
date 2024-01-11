@@ -49,6 +49,8 @@ export const About = () => {
     const writeTechText = (id) => {
         const techText = document.getElementById('tech-info');
         const textInfo = data[id -1].info;
+
+    
         
         techText.innerHTML=
         `
@@ -59,7 +61,6 @@ export const About = () => {
             ${textInfo}
         </div>
         `
-        ref.current?.scrollIntoView({behavior: 'smooth'});
     }
 
     const writeAltTechText = (id) => {
@@ -68,14 +69,13 @@ export const About = () => {
         
         techText.innerHTML=
         `
-        <div class="tech-info-choosen">
+        <div class="tech-info-choosen animate__animated animate__bounceIn">
         <img src="${altData[id -1].image}" class="tech-info-img" />
         </div>
-        <div class="tech-info-txt">
+        <div class="tech-info-txt animate__animated animate__bounceInRight">
             ${textInfo}
         </div>
         `
-        ref.current?.scrollIntoView({behavior: 'smooth'});
     }
 
     setTimeout(() => {
@@ -108,12 +108,12 @@ export const About = () => {
             <>
             <div className="about-section section">
             <div className="about-img-container">
-                <img src="https://i.ibb.co/r7YXMVJ/Nico.jpg" alt="" className="home-img"  />
+                <img src="https://i.ibb.co/FmDrdbZ/1kjh-1.png" alt="" className="home-img"  />
                 </div>
                 <p id="about-txt" className="about-txt">{text[13].txt}</p>
             </div>
             <div className="tech-section">
-                <p className="tech-i-use">Technologies that I use</p>
+                <p className="tech-i-use">{text[14].txt}</p>
                 <div className="tech-icons-zone" id="tech-zone">
                 {
                     language ?
@@ -146,9 +146,7 @@ export const About = () => {
                     </>
                 }
                 </div>
-                <div className="tech-info" id="tech-info" ref={ref}>
-
-                </div>
+                <div className="tech-info" id="tech-info" ref={ref}></div>
             </div>
             </>
             :
