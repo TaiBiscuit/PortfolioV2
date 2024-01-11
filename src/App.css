@@ -77,7 +77,27 @@ h1 {
   background-color: white;
 }
 
-.lang-container:hover {
+.back-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: white;
+}
+
+.svgg{
+  width: 20px;
+  height: 50px;
+}
+
+.lang-container:hover, .back-container:hover {
   opacity: 0.8;
   scale: 1.1;
 }

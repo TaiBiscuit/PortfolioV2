@@ -11,9 +11,11 @@ export const NavBar = () => {
         const body = document.getElementById('root');
         const themecontainer = document.getElementsByClassName("theme-container")[0];
         const langContainer = document.getElementsByClassName("lang-container")[0];
+        const upContainer = document.getElementsByClassName('back-container')[0];
         const themeIcon = document.getElementById("theme-icon");
         const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
-        const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+        const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
+        const upArrow = "https://www.svgrepo.com/show/93813/up-arrow.svg";
         setLightMode((prevState) => !prevState);
 
         if(!lightMode) {
@@ -28,6 +30,7 @@ export const NavBar = () => {
             }, 300);
             themeIcon.classList.add("change");
             themeIcon.src = moon;
+            upContainer.classList.remove('shadow-light');
         } else {
             body.style.backgroundColor = 'rgba(255, 255, 255, 0.87)';
             body.style.color = '#242424';
@@ -41,6 +44,7 @@ export const NavBar = () => {
             }, 300);
             themeIcon.classList.add("change");
             themeIcon.src = sun;
+            upContainer.classList.add('shadow-light');
         } 
     }
 
@@ -66,6 +70,11 @@ export const NavBar = () => {
                         <><p>ES</p></>
                     }
                 </div>
+                <a href="#home">
+                <div className="back-container shadow-light">
+                    <img id="theme-icon" className="svgg" src="https://www.svgrepo.com/show/93813/up-arrow.svg" alt="ERR" />
+                </div>
+                </a>
                 </ul>
             </nav>
             <nav className='section-nav'>

@@ -105,7 +105,7 @@ export const Home = () => {
     return (
     <>
     <NavBar />
-    <div className=" hide main-container">
+    <div className=" hide main-container" id="home">
         <div className="animate__animated animate__fadeIn home-img-container">
             <div className=" box__line box__line--top"></div>
             <div className=" box__line box__line--right"></div>
