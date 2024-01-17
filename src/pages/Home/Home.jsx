@@ -65,12 +65,12 @@ export const Home = () => {
         sections.forEach(element => {
             element.classList.remove('hide')
         });
-    }, "500");
+    }, "1500");
 
     setTimeout(() => {
         document.querySelector('.btn-section').classList.remove('hide')
         document.querySelector('.rest').classList.remove('hide')
-    }, "1500");
+    }, "2000");
     
 
     useEffect(()=>{

@@ -49,9 +49,9 @@
         "key": 106
     },
     {
-        "name": "Python",
-        "info": "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, por ejemplo: Instagram, Netflix, Spotify, Panda3D, entre otros.​",
-        "image": "https://i.ibb.co/68QccKn/python.png",
+        "name": "Java",
+        "info": "Java es un lenguaje de programación multiplataforma orientado a objetos que se ejecuta en miles de millones de dispositivos de todo el mundo. Sustenta aplicaciones, sistemas operativos de smartphones, software empresarial y muchos programas conocidos. A pesar de haberse inventado hace más de 20 años, Java es actualmente el lenguaje de programación más popular para los desarrolladores de aplicaciones.​",
+        "image": "https://staging.svgrepo.com/show/184143/java.svg",
         "id": 7,
         "key": 107
     }
