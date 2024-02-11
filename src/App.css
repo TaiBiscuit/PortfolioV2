@@ -61,6 +61,11 @@ h1 {
   scale: 1.1;
 }
 
+.theme-icon{
+  width: 30px;
+  height: 30px;
+}
+
 .lang-container {
   width: 70px;
   height: 70px;
@@ -406,8 +411,17 @@ h1 {
     padding: 0;
     margin-bottom: 1rem;
   }
+
+  .return-btn2 {
+    border: solid 1px black;
+    background: white;
+    color: black;
+    line-height: 42px;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
     
-  .return-btn:hover {
+  .return-btn:hover, .return-btn2:hover {
     background: black;
     color: white;
         box-shadow:
@@ -419,7 +433,9 @@ h1 {
   }
   
   .return-btn:before,
-  .return-btn:after{
+  .return-btn:after, 
+  .return-btn2:before,
+  .return-btn2:after{
     content:'';
     position:absolute;
     top:0;
@@ -430,7 +446,7 @@ h1 {
     transition:400ms ease all;
   }
   
-  .return-btn:after{
+  .return-btn:after, .return-btn2:after{
     right:inherit;
     top:inherit;
     left:0;
@@ -438,7 +454,9 @@ h1 {
   }
   
   .return-btn:hover:before,
-  .return-btn:hover:after{
+  .return-btn:hover:after,
+  .return-btn2:hover:before,
+  .return-btn2:hover:after{
     width:100%;
     transition:800ms ease all;
   }
@@ -867,14 +885,12 @@ margin-top: 2rem;
     height: 59vh;
   }
 
-  .home-btn, .return-btn, .go-project-btn{
+  .home-btn, .return-btn, .return-btn2, .go-project-btn{
     width: 20rem;
     height: 10vh;
   }
 
-  .return-btn{
-    margin-bottom: 4rem;
-  }
+
 
   .go-project-btn{
     margin-bottom: 1rem;
@@ -1007,8 +1023,8 @@ margin-top: 2rem;
   }
 
   .home-img-container, .about-img-container{
-    height: 14rem;
-    width: 14rem;
+    height: 16rem;
+    width: 18rem;
   }
 
   .project-list{
