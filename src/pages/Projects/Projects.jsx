@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { GoBackBtn, ProjectBtn, Loader } from "../../components";
+import { BsGithub } from "react-icons/bs"; 
 import { TextContext } from "../../context/TextContext";
 
 export const Projects = () => {
@@ -118,7 +119,23 @@ export const Projects = () => {
                         <div className="img-container">
                         <img src={selected.image} alt="" className="slected-project-img"/>
                         </div>
+                        <div className="prj-tech-img">
+                            <img src={selected.tech1} alt="" className="selected-tech" />
+                            {
+                                selected.tech2 ?
+                                <>
+                                    <img src={selected.tech2} alt="" className="selected-tech" />
+                                </>
+                                :
+                                <>
+                                </>
+                            }
+                        </div>
+                        <div className="go-prj-btns">
                         <a href={selected.link} target="_blank"><button className="go-project-btn custom-btn-2">{text[11].txt}</button></a>
+                        <a href={selected.git} target="_blank"><button className="go-project-btn custom-btn-2"><BsGithub size={50} className="project-git-icon"/> </button></a>
+                        </div>
+
                     </div>
                     </>
                     :

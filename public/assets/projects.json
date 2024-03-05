@@ -4,6 +4,7 @@
         "title":"Chat App",
         "image": "https://i.ibb.co/0CcrNtt/ezgif-com-optimize.gif",
         "link": "https://nico-chat-app.netlify.app/",
+        "git": "https://github.com/TaiBiscuit/Chat-App",
         "tech1": "https://i.ibb.co/p0XsJ8r/reactjs.png",
         "tech2": "https://svgur.com/i/xdW.svg",
         "key": 50
@@ -13,6 +14,7 @@
         "title":"E-Commerce",
         "image": "https://i.ibb.co/X3x0PR1/ezgif-com-crop.gif",
         "link": "https://nico-ecommerce.netlify.app/",
+        "git": "https://github.com/TaiBiscuit/E-Commerce",
         "tech1": "https://i.ibb.co/p0XsJ8r/reactjs.png",
         "tech2": "https://svgur.com/i/xdW.svg",
         "key": 51
@@ -22,6 +24,7 @@
         "title":"Snake Game",
         "image": "https://i.ibb.co/7Xy7sxb/snakefinal.gif",
         "link": "https://taibiscuit.github.io/Snake-Js-Game/",
+        "git": "https://github.com/TaiBiscuit/Snake-Js-Game",
         "tech1": "https://i.ibb.co/1vQZ3sB/javascript.png",
         "key": 53
     },
@@ -30,6 +33,7 @@
         "title":"Piano",
         "image": "https://i.ibb.co/3dp57s4/Pianofinal.gif",
         "link": "https://taibiscuit.github.io/Piano-Js/",
+        "git": "https://github.com/TaiBiscuit/Piano-Js",
         "tech1": "https://i.ibb.co/1vQZ3sB/javascript.png",
         "tech2": "https://i.ibb.co/Rv1yvNP/css.png",
         "key": 54
@@ -39,6 +43,7 @@
         "title":"Weather App",
         "image": "https://i.ibb.co/tCmwDMj/Weather-App.png",
         "link": "https://github.com/TaiBiscuit/The-Weather-App",
+        "git": "https://github.com/TaiBiscuit/The-Weather-App",
         "tech1": "https://i.ibb.co/1vQZ3sB/javascript.png",
         "tech2": "https://i.ibb.co/Rv1yvNP/css.png",
         "key": 52

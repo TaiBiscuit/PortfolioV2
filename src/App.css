@@ -487,6 +487,14 @@ h1 {
     color: #fff;
   }
 
+  .project-git-icon{
+    color: black;
+  }
+
+  .go-project-btn:hover .project-git-icon, .go-extra-btn:hover .project-git-icon{
+    color: white;
+  }
+
   .go-project-btn:hover:after, .go-extra-btn:hover:after{
     -webkit-transform: scale(2) rotate(180deg);
     transform: scale(2) rotate(180deg);
@@ -546,10 +554,25 @@ h1 {
     background-color: white;
   }
 
+  .prj-tech-img{
+    display: flex;
+  }
+
+  .selected-tech{
+    width: 100px;
+    height: 100px;
+  }
+
   .go-extra-btn{
     margin-top: 1rem;
     width: 240px;
     height: 80px;
+  }
+
+  .go-prj-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 
@@ -815,6 +838,12 @@ margin-top: 2rem;
     transform: scale(1.5);
   }
   
+  .go-prj-btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 
   
   /* CONTACT */
@@ -926,6 +955,11 @@ margin-top: 2rem;
     margin-right: 0rem;
   }
 
+  .go-prj-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
   /* ABOUT */
