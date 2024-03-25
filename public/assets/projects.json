@@ -40,12 +40,11 @@
     },
     {
         "id": 5,
-        "title":"Weather App",
-        "image": "https://i.ibb.co/tCmwDMj/Weather-App.png",
-        "link": "https://github.com/TaiBiscuit/The-Weather-App",
-        "git": "https://github.com/TaiBiscuit/The-Weather-App",
+        "title":"Recorder App",
+        "image": "https://i.ibb.co/f88488d/start.png%20alt=",
+        "link": "https://taibiscuit.github.io/recorder-download-page/",
+        "git": "https://github.com/TaiBiscuit/Electron-Screen-Recorder",
         "tech1": "https://i.ibb.co/1vQZ3sB/javascript.png",
-        "tech2": "https://i.ibb.co/Rv1yvNP/css.png",
         "key": 52
     }
 ]
